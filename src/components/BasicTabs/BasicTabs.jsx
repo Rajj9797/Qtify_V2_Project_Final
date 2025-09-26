@@ -5,7 +5,7 @@ import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import styles from "./BasicTab.module.css"
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 
 function CustomTabPanel(props) {

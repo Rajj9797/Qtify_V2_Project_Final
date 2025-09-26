@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./Card.module.css"
 import {Chip, Tooltip} from '@mui/material'
 
+
 const Card = ({data,type}) => {
 
   const getCard = (type) => {
@@ -32,7 +33,7 @@ const Card = ({data,type}) => {
         
         const {image,likes,title,songs} = data;
         return (
-          <Tooltip title={`${songs.length} songs`} placement='top' arrow>
+          <Tooltip title={`${songs?.length} songs`} placement='top' arrow>
           <div className={styles.wrapper}>
             <div className={styles.card}>
               <img src={image} alt='song' loading='lazy' />

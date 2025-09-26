@@ -3,6 +3,7 @@ import styles from "./Section.module.css";
 import Card from "../Card/Card";
 import { CircularProgress } from "@mui/material";
 import Carousel from "../Carousel/Carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Section = ({ title, data, type }) => {
   const [carouselToggle, setCarouselToggle] = useState(true);
@@ -23,11 +24,29 @@ const Section = ({ title, data, type }) => {
       ) : (
         <div className={styles.cardWrapper}>
           {!carouselToggle ? (
-            <div className={styles.wrapper}>
-                {data.map((card) => (
-                <Card data={card} type={type} key={card.id} />
-                ))}
-            </div>
+            <Swiper
+              spaceBetween={15}
+              slidesPerView={6}
+              onSlideChange={() => {
+                console.log("Slide change");
+              }}
+              onSwiper={(swiper) => console.log("Swiper")}
+              className="albums"
+              breakpoints={{
+                320: { slidesPerView: 2 },
+                600: { slidesPerView: 3 },
+                900: { slidesPerView: 4 },
+                1200: { slidesPerView: 6 },
+              }}
+            >
+              <div className={styles.wrapper}>
+                  {data.map((card) => (
+                    <SwiperSlide>
+                      <Card data={card} type={type} key={card.id} />
+                    </SwiperSlide>
+                  ))}
+              </div>
+            </Swiper>
           ) : (
             <Carousel data={data} renderCardComponent={(data) => <Card data={data} type={type}/>}/>
           )}
