@@ -124,8 +124,8 @@ function App() {
       <Navbar />
       <Hero />
       <div className={styles.sectionWrapper}>
-        <Section type='album' title='Top Albums' data={topAlbumSongs} />
-        <Section type='album' title='New Albums' data={newAlbumSongs} />
+        <Section type='topalbum' title='Top Albums' data={topAlbumSongs} />
+        <Section type='newalbum' title='New Albums' data={newAlbumSongs} />
         <FilterSection data={newAlbumSongs} type='songFilter' title='Songs' filteredData={filteredData} filteredDataValues={filteredDataValues} value={value} handleChange={handleChange} handleToggle={handleToggle}/>
       </div>
     </>
