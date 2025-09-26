@@ -5,7 +5,7 @@ export const BACKEND_ENPOINT = "https://qtify-backend.labs.crio.do"
 export const fetchTopAlbums = async() => {
     try{
         const res = await axios.get(`${BACKEND_ENPOINT}/albums/top`);
-        console.log(res.data)
+        console.log(res.data, "top albums");
         return res.data
     }catch(error){
         console.log(error)
@@ -15,6 +15,8 @@ export const fetchTopAlbums = async() => {
 export const fetchNewAlbums = async() => {
     try{
         const res = await axios.get(`${BACKEND_ENPOINT}/albums/new`);
+        console.log(res.data, "New albums");
+
         return res.data
     }
     catch(error){
@@ -26,6 +28,7 @@ export const fetchNewAlbums = async() => {
 export const fetchSongs = async() => {
     try{
         const res = await axios.get(`${BACKEND_ENPOINT}/songs`);
+        console.log(res.data, "songs");
         return res.data
     }
     catch(error){
